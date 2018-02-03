@@ -1,0 +1,12 @@
+<h1>Chat room</h1>
+
+<div id="messages">
+  <% @messages.each do |obj| %>
+  <%= obj.content %><br>
+  <% end %>
+</div>
+<form>
+  <label>Say something:</label><br>
+  <input type="text" data-behavior="room_speaker">
+</form>
+
