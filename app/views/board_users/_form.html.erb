@@ -11,22 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nickname %>
-    <%= form.text_area :nickname, id: :board_user_nickname %>
-  </div>
+  <table>
+  <tr class="field">
+    <th><%= form.label :nickname %></th>
+    <td><%= form.text_area :nickname, id: :board_user_nickname %></td>
+  </tr>
 
-  <div class="field">
-    <%= form.label :account_id %>
-    <%= form.number_field :account_id, id: :board_user_account_id %>
-  </div>
+  <%= form.hidden_field :account_id %>
 
-  <div class="field">
-    <%= form.label :memo %>
-    <%= form.text_area :memo, id: :board_user_memo %>
-  </div>
+  <tr class="field">
+    <th><%= form.label :memo %></th>
+    <td><%= form.text_area :memo, id: :board_user_memo %></td>
+  </tr>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <tr class="actions">
+    <th></th><td><%= form.submit %></td>
+  </tr>
+  </table>
 <% end %>
