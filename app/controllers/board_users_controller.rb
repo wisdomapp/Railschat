@@ -15,6 +15,7 @@ class BoardUsersController < ApplicationController
     user.save
     users=BoardUser.where'account_id==?',current_account.id
    end
+   @board_user=users[0]
   end
 
   # GET /board_users/1

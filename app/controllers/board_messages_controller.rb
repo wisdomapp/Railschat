@@ -6,20 +6,30 @@ class BoardMessagesController < ApplicationController
   # GET /board_messages.json
   def index
     @messages = BoardMessage.all
+    users=BoardUser.where'account_id==?',current_account.id
+    if users[0]==nil then
+     user=BoardUser.new
+     user.account_id=current_account.id
+     user.nickname='<<no name>>'
+     user.save
+     users=BoardUser.where'account_id==?',current_account.id
+    end
   end
 
   # GET /board_messages/1
   # GET /board_messages/1.json
   def show
+    redirect_to'/board_messages'
   end
 
   # GET /board_messages/new
   def new
-    @board_message = BoardMessage.new
+    redirect_to'/board_messages'
   end
 
   # GET /board_messages/1/edit
   def edit
+    redirect_to'/board_messages'
   end
 
   # POST /board_messages
@@ -41,25 +51,13 @@ class BoardMessagesController < ApplicationController
   # PATCH/PUT /board_messages/1
   # PATCH/PUT /board_messages/1.json
   def update
-    respond_to do |format|
-      if @board_message.update(board_message_params)
-        format.html { redirect_to @board_message, notice: 'Board message was successfully updated.' }
-        format.json { render :show, status: :ok, location: @board_message }
-      else
-        format.html { render :edit }
-        format.json { render json: @board_message.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to'/board_messages'
   end
 
   # DELETE /board_messages/1
   # DELETE /board_messages/1.json
   def destroy
-    @board_message.destroy
-    respond_to do |format|
-      format.html { redirect_to board_messages_url, notice: 'Board message was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to'/board_messages'
   end
 
   private

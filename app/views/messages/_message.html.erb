@@ -1,3 +1,4 @@
 <div class="message">
-  <%= message.content %>
+  <%= link_to message.board_user.nickname,controller: :board_users,action: :show,id:message.board_user_id %>
+  <%= ':'+message.content %>
 </div>

@@ -1,8 +1,10 @@
+<p><%= link_to'go home >>',controller: :board_users %></p>
 <h1>Chat room</h1>
 
 <div id="messages">
   <% @messages.each do |obj| %>
-  <%= obj.content %><br>
+  <%= link_to obj.board_user.nickname,controller: :board_users,action: :show,id:obj.board_user_id %>
+  <%= ':'+obj.content %><br>
   <% end %>
 </div>
 <form id="room_speaker">
@@ -11,6 +13,7 @@
   <input type="hidden" id="id" value=<%= current_account.id %>>
 </form>
 <div><%= link_to"sign out&gt;&gt;".html_safe,destroy_account_session_path,method: :delete %></div>
+
 <script>
 $(function(){
     $(document).on('keypress','#room_speaker',function(e){
