@@ -6,6 +6,7 @@
     <div class="messages-index-item" id="<%= obj.id %>">
       <%= link_to obj.board_user.nickname,controller: :board_users,action: :show,id:obj.board_user_id %>
       <%= ':'+obj.content %>
+      <%= obj.created_at %>
       <% if obj.board_user.id==current_account.id %>
         <button id="<%=obj.id%>" class="delete-btn">削除</button>
       <% end %>
