@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'RailsChat<sora5773@gmail.com>',
+  default from: 'RailsChat<mailaddress>',
           bcc:  "",
           reply_to:"sample+reply@gmail.com"
   layout 'mailer'
