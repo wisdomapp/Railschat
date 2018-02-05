@@ -1,5 +1,5 @@
 <div class="message">
   <%= link_to message.board_user.nickname,controller: :board_users,action: :show,id:message.board_user_id %>
-  <%= ':'+message.content %>
-  <%= message.created_at %>
+  :<b><%= +message.content %></b>
+  <font size="1"><%= message.created_at %></font>
 </div>
