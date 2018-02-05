@@ -8,6 +8,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    BoardMessage.create! content: data['message']
+    BoardMessage.create!(content: data['message'],board_user_id: 'current_account.id')
+    #print "アカウントIDは",current_account.id
   end
 end
