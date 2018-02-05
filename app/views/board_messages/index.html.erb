@@ -5,8 +5,20 @@
   <%= obj.content %><br>
   <% end %>
 </div>
-<form>
+<form id="room_speaker">
   <label>Say something:</label><br>
-  <input type="text" data-behavior="room_speaker">
+  <input type="text" id="message">
+  <input type="hidden" id="id" value=<%= current_account.id %>>
 </form>
 <div><%= link_to"sign out&gt;&gt;".html_safe,destroy_account_session_path,method: :delete %></div>
+<script>
+$(function(){
+    $(document).on('keypress','#room_speaker',function(e){
+      if(e.keyCode==13){
+        App.room.speak(message.value,id.value);
+        message.value = ''
+        e.preventDefault()
+      }
+    });
+});
+</script>
