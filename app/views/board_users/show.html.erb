@@ -19,7 +19,16 @@
   <th>自己紹介:</th>
   <td><%= @board_user.memo %></td>
 </tr>
+
 </table>
+
+<tr>
+  <b>過去の書き込み:</b>
+    <% @board_user.board_message.each do |obj| %>
+    <br><td><%= obj.content %></td>
+  <% end %>
+</tr>
+
 
 <hr>
 <%= link_to '<< 戻る',controller: :board_messages %>
