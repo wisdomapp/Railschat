@@ -13,19 +13,19 @@
 
   <table>
   <tr class="field">
-    <th><%= form.label :nickname %></th>
-    <td><%= form.text_area :nickname, id: :board_user_nickname %></td>
+    <th>ニックネーム</th>
+    <td><%= form.text_field :nickname, id: :board_user_nickname %></td>
   </tr>
 
   <%= form.hidden_field :account_id %>
 
   <tr class="field">
-    <th><%= form.label :memo %></th>
+    <th>自己紹介</th>
     <td><%= form.text_area :memo, id: :board_user_memo %></td>
   </tr>
 
   <tr class="actions">
-    <th></th><td><%= form.submit %></td>
+    <th></th><td><%= form.submit value: "変更" %></td>
   </tr>
   </table>
 <% end %>

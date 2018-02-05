@@ -1,7 +1,7 @@
-<h1>"<%= @board_user.nickname %>"</h1>
+<h1>"<%= @board_user.nickname %>"さんの情報</h1>
 <table>
 <tr>
-  <th>Nickname:</th>
+  <th>ニックネーム:</th>
   <td><%= @board_user.nickname %></td>
 </tr>
 
@@ -11,16 +11,16 @@
 </tr>
 
 <tr>
-  <th>Created at:</th>
+  <th>登録日:</th>
   <td><%= @board_user.created_at %></td>
 </tr>
 
 <tr>
-  <th>Memo:</th>
+  <th>自己紹介:</th>
   <td><%= @board_user.memo %></td>
 </tr>
 </table>
 
 <hr>
-<%= link_to '<< Back',controller: :board_messages %>
+<%= link_to '<< 戻る',controller: :board_messages %>
 <hr>

@@ -1,5 +1,5 @@
-<p><%= link_to'go home >>',controller: :board_users %></p>
-<h1>Chat room</h1>
+<p><%= link_to'マイページ >>',controller: :board_users %></p>
+<h1>Chat Room</h1>
 
 <div id="messages">
   <% @messages.each do |obj| %>
@@ -7,12 +7,14 @@
   <%= ':'+obj.content %><br>
   <% end %>
 </div>
+<br>
 <form id="room_speaker">
-  <label>Say something:</label><br>
+  <label>発言する:</label>
   <input type="text" id="message">
   <input type="hidden" id="id" value=<%= current_account.id %>>
 </form>
-<div><%= link_to"sign out&gt;&gt;".html_safe,destroy_account_session_path,method: :delete %></div>
+<br>
+<div><%= link_to"ログアウト&gt;&gt;".html_safe,destroy_account_session_path,method: :delete %></div>
 
 <script>
 $(function(){
