@@ -3,6 +3,9 @@ class MessageBroadcastJob < ApplicationJob
 
   def perform(message)
     ActionCable.server.broadcast 'room_channel', message: render_message(message)
+    Account.all.each do |account|
+      TestMailer.send_when_update(account).deliver
+    end
   end
 
   private
